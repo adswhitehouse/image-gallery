@@ -13,3 +13,5 @@ leftBtn.addEventListener("click", () => {
     images.classList.add("animation-right");
   }
 });
+
+
