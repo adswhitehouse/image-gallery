@@ -52,7 +52,6 @@ select {
 }
 /* CSS Reset */
 
-/* Body */
 body {
   background-color: #181818;
   display: flex;
@@ -60,89 +59,61 @@ body {
   justify-content: center;
 }
 
-/* Gallery */
-.gallery {
-  position: relative;
-  padding-inline: 4rem;
-}
-
-/* Image Container */
-.image-container {
-  width: 49rem;
-  overflow: hidden;
-}
-
-/* Images */
-.images {
+/* Gallery Container */
+.gallery-container {
   display: flex;
   gap: 1rem;
-  padding: 2rem 1rem;
-  margin-left: 0;
+  align-items: center;
+  justify-content: space-between;
 }
 
-img {
+/* Galley */
+.gallery {
+  width: 50rem;
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem;
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gallery Images */
+.images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  flex: none;
+}
+
+.images img {
+  filter: grayscale(1);
   filter: gray;
   -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-  transition: all 0.5s;
-  width: 15rem;
+  transition: all 1s;
 }
 
-img:hover {
+.images img:hover {
   filter: none;
   -webkit-filter: grayscale(0);
   transform: scale(1.1);
 }
 
-/* Animations */
-.animation-left {
-  animation: scroll-left 2s forwards;
-}
-
-@keyframes scroll-left {
-  to {
-    margin-left: -48rem;
-  }
-}
-
-.animation-right {
-  animation: scroll-right 2s forwards;
-}
-
-@keyframes scroll-right {
-  from {
-    margin-left: -48rem;
-  }
-
-  to {
-    margin-left: 0rem;
-  }
-}
-
-/* Buttons */
-.left-btn,
-.right-btn {
-  background-color: #fe6753;
+/* Gallery Buttons */
+.gallery-container button {
   width: 3rem;
   height: 3rem;
+  background-color: #fe6753;
   border-radius: 50%;
-  border: none;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  border: none;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin-block: auto;
-}
-
-.left-btn {
-  left: 0;
-}
-
-.right-btn {
-  right: 0;
+  color: #fff;
 }

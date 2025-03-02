@@ -1,17 +1,11 @@
-let images = document.querySelector(".jsImages");
-let rightBtn = document.querySelector(".jsRightBtn");
+let gallery = document.querySelector(".jsGallery");
 let leftBtn = document.querySelector(".jsLeftBtn");
+let rightBtn = document.querySelector(".jsRightBtn");
 
 rightBtn.addEventListener("click", () => {
-  images.classList.remove("animation-right");
-  images.classList.add("animation-left");
+  gallery.scrollTo({ left: 800 });
 });
 
 leftBtn.addEventListener("click", () => {
-  if (images.classList.contains("animation-left")) {
-    images.classList.remove("animation-left");
-    images.classList.add("animation-right");
-  }
+  gallery.scrollTo({ left: -800 });
 });
-
-
